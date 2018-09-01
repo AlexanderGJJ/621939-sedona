@@ -7,7 +7,7 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   color: #333333;
   text-transform: uppercase;
 
@@ -190,6 +190,9 @@ input[type="radio"].visually-hidden {
 }
 .description__list,
 .benefits-list {
+  position: relative;
+  z-index: 2;
+
   display: flex;
   flex-wrap: wrap;
   margin: 0;
@@ -344,26 +347,32 @@ input[type="radio"].visually-hidden {
 
 .search {
   position: relative;
+  z-index: 2;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   margin: 0 auto;
   padding: 0 73px;
   padding-top: 50px;
+  padding-bottom: 47px;
 
   background-color: #ffffff;
 }
 
+.reservation {
+  position: relative;
 
-.search-form-block {
-  display: none;
+  display: flex;
+  justify-content: center;
+
+  background: #ffffff;
 }
 
-.search-form {
+
+
+.reservation-form {
   position: absolute;
-  top: 291px;
+  z-index: 1;
+  top: 86px;
   left: 316px;
 
   display: flex;
@@ -376,17 +385,18 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
   box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 
-  animation-name: formq;
+  animation-name: form;
   animation-duration: 1.5s;
-  animation-timing-function: ease-out;
   animation-direction: reverse;
 
   animation-fill-mode: both;
 }
 
+.reservation-form-block {
+  display: none;
+}
 
-
-@keyframes forma {
+@keyframes form {
   0% {
     transform: translateY(0);
   }
@@ -408,13 +418,14 @@ input[type="radio"].visually-hidden {
 
 .search__text {
   margin: 0;
-  margin-bottom: 47px;
 
   font-weight: 400;
   line-height: 24px;
   text-align: center;
 }
-.search__button {
+.reservation__search-button {
+  z-index: 2;
+
   display: inline-block;
   width: 568px;
   padding: 30px;
@@ -432,44 +443,44 @@ input[type="radio"].visually-hidden {
 }
 
 
-.search__button:hover {
+.reservation__search-button:hover {
   background-color: #604e43;
 }
 
-.search__button:active {
+.reservation__search-button:active {
   color: rgba(255, 255, 255, 0.3);
 
   background-color: #503e33;
 }
 
-.search-form p {
+.reservation p {
   margin: 0;
 }
-.search-form .search-form__item-arrival,
-.search-form .search-form__item-exit {
+.reservation .reservation__item-arrival,
+.reservation .reservation__item-exit {
   margin-bottom: 29px;
 }
-.search-form__label-arrival {
+.reservation__label-arrival {
   display: inline-block;
   width: 91px;
   margin-right: 17px;
 }
-.search-form__label-exit {
+.reservation__label-exit {
   display: inline-block;
   width: 95px;
   margin-right: 13px;
 }
-.search-form__label-adult {
+.reservation__label-adult {
   display: inline-block;
   margin-right: 36px;
 }
-.search-form__label-children {
+.reservation__label-children {
   display: inline-block;
   margin-right: 23px;
 }
 
-.search-form__item label,
-.search-form__item input {
+.reservation__item label,
+.reservation__item input {
   font-weight: 700;
   line-height: 26px;
   color: #000000;
@@ -478,28 +489,28 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-.search-form__input {
+.reservation__input {
   background-color: #f2f2f2;
 }
 
-.search-form__item {
+.reservation__item {
   position: relative;
 
   width: 458px;
 }
-.search-form__adult {
+.reservation__adult {
   position: relative;
 
   width: 226px;
 }
-.search-form__children {
+.reservation__children {
   position: relative;
 
   width: 179px;
 }
 
-.search-form__item-arrival input,
-.search-form__item-exit input {
+.reservation__item-arrival input,
+.reservation__item-exit input {
   box-sizing: border-box;
   width: 346px;
   min-height: 38px;
@@ -507,7 +518,7 @@ input[type="radio"].visually-hidden {
   padding-left: 13px;
 }
 
-.search-form__input-people {
+.reservation__input-people {
   box-sizing: border-box;
   width: 114px;
   min-height: 38px;
@@ -516,7 +527,7 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 
-.search-form__calendar {
+.reservation__calendar {
   position: absolute;
   top: 0;
   right: 0;
@@ -529,7 +540,7 @@ input[type="radio"].visually-hidden {
   outline: 0;
 }
 
-.search-form__calendar svg {
+.reservation__calendar svg {
   position: absolute;
   top: 8px;
   right: 9px;
@@ -540,19 +551,19 @@ input[type="radio"].visually-hidden {
   fill: #cacaca;
 }
 
-.search-form__calendar:hover svg {
+.reservation__calendar:hover svg {
   fill: #000000;
 }
 
-.search-form__calendar:focus svg {
+.reservation__calendar:focus svg {
   fill: #000000;
 }
 
-.search-form__calendar:active svg {
+.reservation__calendar:active svg {
   fill: #81b3d2;
 }
 
-.search-form__adult .search-form__button-plus {
+.reservation__adult .reservation__button-plus {
   position: absolute;
   top: 0px;
   right: 6px;
@@ -565,7 +576,7 @@ input[type="radio"].visually-hidden {
   outline: none;
   cursor: pointer;
 }
-.search-form__adult .search-form__button-minus {
+.reservation__adult .reservation__button-minus {
   position: absolute;
   top: 0px;
   left: 106px;
@@ -578,7 +589,7 @@ input[type="radio"].visually-hidden {
   outline: none;
   cursor: pointer;
 }
-.search-form__children .search-form__button-plus {
+.reservation__children .reservation__button-plus {
   position: absolute;
   top: 0px;
   right: 5px;
@@ -591,7 +602,7 @@ input[type="radio"].visually-hidden {
   outline: none;
   cursor: pointer;
 }
-.search-form__children .search-form__button-minus {
+.reservation__children .reservation__button-minus {
   position: absolute;
   top: 0px;
   left: 60px;
@@ -605,8 +616,8 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.search-form__button::before,
-.search-form__button::after {
+.reservation__button::before,
+.reservation__button::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -617,27 +628,27 @@ input[type="radio"].visually-hidden {
 
   background-color: gray;
 }
-.search-form__button-plus::after {
+.reservation__button-plus::after {
   transform: rotate(90deg);
 }
-.search-form__button:hover::before,
-.search-form__button:hover:after {
+.reservation__button:hover::before,
+.reservation__button:hover:after {
   background-color: #000000;
 }
-.search-form__button:active::before,
-.search-form__button:active::after {
+.reservation__button:active::before,
+.reservation__button:active::after {
   background-color: #81b3d2;
 }
-.search-form__input:hover {
+.reservation__input:hover {
   background-color: #ebebeb;
 }
-.search-form__input:focus {
+.reservation__input:focus {
   background-color: #ffffff;
   outline: none;
   box-shadow: 0 0 0 2px #e5e5e5;
 }
 
-.search-form__btn {
+.reservation__btn {
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
@@ -655,11 +666,11 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-.search-form__btn:hover {
+.reservation__btn:hover {
   background-color: #669ec0;
 }
 
-.search-form__btn:active {
+.reservation__btn:active {
   color: rgba(255, 255, 255, 0.3);
 
   background-color: #5496bd;
@@ -985,6 +996,7 @@ input[type="radio"].visually-hidden {
   position: relative;
 
   display: flex;
+  flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 30px;
 }
