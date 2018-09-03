@@ -118,13 +118,11 @@ input[type="radio"].visually-hidden {
   -ms-flex-wrap: wrap;
 }
 
-.main-navigation__item a:hover {
+.main-navigation__item a:hover,
+.main-navigation__item a:focus {
   color: #81b3d2;
 }
 
-.main-navigation__item a:focus {
-  color: #766357;
-}
 .main-navigation__list .current {
   color: #766357;
 }
@@ -191,6 +189,7 @@ input[type="radio"].visually-hidden {
   text-align: center;
   color: #000000;
 }
+
 .slogan__item {
   margin: 0;
 
@@ -496,7 +495,8 @@ input[type="radio"].visually-hidden {
 }
 
 
-.reservation__search-button:hover {
+.reservation__search-button:hover,
+.reservation__search-button:focus {
   background-color: #604e43;
 }
 
@@ -689,7 +689,9 @@ input[type="radio"].visually-hidden {
           transform: rotate(90deg);
 }
 .reservation__button:hover::before,
-.reservation__button:hover:after {
+.reservation__button:hover:after,
+.reservation__button:focus::before,
+.reservation__button:focus:after {
   background-color: #000000;
 }
 .reservation__button:active::before,
@@ -725,7 +727,8 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-.reservation__btn:hover {
+.reservation__btn:hover,
+.reservation__btn:focus {
   background-color: #669ec0;
 }
 
@@ -818,14 +821,20 @@ input[type="radio"].visually-hidden {
   -ms-flex-align: center;
   -ms-flex-pack: center;
 }
-.social-button:hover {
+.social-button:hover,
+.social-button:focus {
   background-color: #669ec0;
 }
 .social-button:active path {
   fill: rgba(255, 255, 255, 0.3);
 }
+
 .social-button:active {
   background: #5496bd;
+}
+/*IE 11 fix*/
+.social-button path:active {
+  fill: rgba(255, 255, 255, 0.3);
 }
 
 .copyright {
@@ -850,10 +859,10 @@ input[type="radio"].visually-hidden {
 
   vertical-align: middle;
 }
-.copyright__link:hover path {
+.copyright__logo-academy:hover path {
   fill: #81b3d2;
 }
-.copyright__link:active path {
+.copyright__logo-academy:active path {
   fill: #bdbbbc;
 }
 
@@ -1079,7 +1088,8 @@ input[type="radio"].visually-hidden {
   border-radius: 2px;
   cursor: pointer;
 }
-.btn-transparent:hover {
+.btn-transparent:hover,
+.btn-transparent:focus {
   color: #000000;
 
   background: #ffffff;
@@ -1178,7 +1188,8 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-.sorting-list__item-link:hover {
+.sorting-list__item-link:hover,
+.sorting-list__item-link:focus {
   color: #81b3d2;
 }
 
@@ -1320,7 +1331,8 @@ input[type="radio"].visually-hidden {
   background-color: #81b3d2;
 }
 
-.button1:hover {
+.button1:hover,
+.button1:focus {
   background-color: #669ec0;
 }
 
@@ -1341,7 +1353,8 @@ input[type="radio"].visually-hidden {
   background-color: #766357;
 }
 
-.button2:hover {
+.button2:hover,
+.button2:focus {
   background-color: #604e43;
 }
 
