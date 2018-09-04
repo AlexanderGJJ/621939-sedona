@@ -135,19 +135,18 @@ input[type="radio"].visually-hidden {
   position: relative;
 
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
   min-height: 564px;
 
   background: url("../img/background-photo.jpg") no-repeat;
   background-color: #669ec0;
   background-position: 0 0;
+
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
 }
 
 .intro__greeting {
@@ -528,19 +527,27 @@ input[type="radio"].visually-hidden {
   display: inline-block;
   width: 91px;
   margin-right: 17px;
+
+  vertical-align: middle;
 }
 .reservation__label-exit {
   display: inline-block;
   width: 95px;
   margin-right: 13px;
+
+  vertical-align: middle;
 }
 .reservation__label-adult {
   display: inline-block;
   margin-right: 36px;
+
+  vertical-align: middle;
 }
 .reservation__label-children {
   display: inline-block;
   margin-right: 23px;
+
+  vertical-align: middle;
 }
 
 .reservation__item label,
@@ -730,6 +737,7 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
+  vertical-align: middle;
   text-align: center;
   color: #ffffff;
   text-transform: uppercase;
