@@ -131,23 +131,22 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.intro__wrap {
+.intro {
   position: relative;
-}
 
-.intro__wrap::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 215px;
-  left: 0;
+  display: -webkit-box;
 
-  width: 1200px;
-  height: 57px;
-  margin: 0 auto;
+  display: -ms-flexbox;
 
-  background-image: url("../img/intro-mask.svg");
-  background-repeat: no-repeat;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 564px;
+
+  background: url("../img/background-photo.jpg") no-repeat;
+  background-color: #669ec0;
   background-position: 0 0;
 }
 
@@ -162,10 +161,21 @@ input[type="radio"].visually-hidden {
   margin: 0 auto;
 }
 
-.intro__slogan {
+.intro::before {
+  content: "";
   position: absolute;
   bottom: 0;
 
+  width: 1200px;
+  height: 57px;
+
+  background-image: url("../img/intro-mask.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+
+.description__slogan {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -179,7 +189,7 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 
-.slogan__title {
+.description__slogan-title {
   margin: 0;
   margin-bottom: 27px;
   padding: 0 380px;
@@ -190,11 +200,12 @@ input[type="radio"].visually-hidden {
   color: #000000;
 }
 
-.slogan__item {
+.description__text {
   margin: 0;
 
   text-align: center;
 }
+
 .description__list,
 .benefits-list {
   position: relative;
